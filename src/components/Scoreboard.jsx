@@ -1,4 +1,6 @@
-import { Button } from 'antd';
+import { Button, Card, Divider } from 'antd';
+import { motion } from 'framer-motion';
+import ScoreCounter from './ScoreCounter';
 import styles from './Scoreboard.module.css';
 
 function Scoreboard({ playerScore, cpuScore, setPlayerScore, setCpuScore }) {
@@ -10,14 +12,27 @@ function Scoreboard({ playerScore, cpuScore, setPlayerScore, setCpuScore }) {
   };
 
   return (
-    <div className={styles.scoreboard}>
-      <h2>Scoreboard</h2>
-      <p>
-        Player: <strong>{playerScore}</strong>
-      </p>
-      <p>
-        CPU: <strong>{cpuScore}</strong>
-      </p>
+    <motion.div
+      className={styles.scoreboard}
+      key={playerScore + cpuScore}
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      whileTap={{ scale: 0.95, rotate: 2 }}
+      transition={{ duration: 0.5 }}
+    >
+      <Card bordered={false} className={styles.scoreboard_card}>
+        <div className={styles.score_container}>
+          <div className={styles.score_section}>
+            <h3 className={styles.score_heading}>Player</h3>
+            <ScoreCounter score={playerScore} />
+          </div>
+          <Divider type="vertical" className={styles.divider} />
+          <div className={styles.score_section}>
+            <h3 className={styles.score_heading}>CPU</h3>
+            <ScoreCounter score={cpuScore} />
+          </div>
+        </div>
+      </Card>
       <Button
         type="primary"
         danger
@@ -26,7 +41,7 @@ function Scoreboard({ playerScore, cpuScore, setPlayerScore, setCpuScore }) {
       >
         Reset Scores
       </Button>
-    </div>
+    </motion.div>
   );
 }
 
