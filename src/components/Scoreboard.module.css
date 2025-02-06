@@ -1,0 +1,20 @@
+.scoreboard {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.reset_button {
+  margin-top: 10px;
+  background-color: #00a30e;
+  border: none;
+  padding: 8px 16px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.reset_button:hover {
+  background-color: #0098be;
+  transform: scale(1.05);
+}

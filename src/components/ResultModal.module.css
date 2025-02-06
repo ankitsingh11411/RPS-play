@@ -1,0 +1,18 @@
+.result_content {
+  text-align: center;
+  font-size: 1.3rem;
+  position: relative;
+}
+
+.confetti {
+  width: 100px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.trophy {
+  width: 80px;
+  margin-top: 10px;
+}
