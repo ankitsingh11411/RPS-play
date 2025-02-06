@@ -19,12 +19,12 @@
   font-size: 1.2rem;
   font-weight: bold;
   border-radius: 10px;
-  background-color: #ff8c00;
+  background-color: #085f00;
   border: none;
   transition: all 0.3s ease;
 }
 
 .play_button:hover {
-  background-color: #ff7300;
+  background-color: #00d8e7;
   transform: scale(1.05);
 }

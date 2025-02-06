@@ -38,7 +38,7 @@ function Game() {
         return newScore;
       });
     } else {
-      roundResult = 'CPU Wins!';
+      roundResult = 'You Lose!';
       setCpuScore((prev) => {
         const newScore = prev + 1;
         localStorage.setItem('cpuScore', newScore);
